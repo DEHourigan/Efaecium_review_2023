@@ -1,0 +1,1 @@
+raxml-ng --all --seed 2 --msa alignment.fasta --model LG --tree pars{10} --bs-trees 200 --threads 10 --bs-metric tbe,fbp
