@@ -14,13 +14,10 @@ ligases_msa <- msa(ligases, method="Muscle" )
 msaPrettyPrint(ligases_msa, file="/home/david/ligases_labelled.tex", output="tex",
  alFile = "/home/david/ligases/alignment.fasta")
 
-
-
-
+# read in tree using ape
  tree = ape::read.tree("/home/david/ligases/raxml/alignment.fasta.raxml.supportFBP")
  rooted_tree = ape::root.phylo(tree, 
      outgroup = "D-ala--D-ala-ligase--Leuconostoc-mesenteroides")
-
 
 # Plot with ggtree
 p2 <- ggtree(rooted_tree) + 
@@ -34,7 +31,7 @@ p2 <- ggtree(rooted_tree) +
         extend = 40) +
     coord_cartesian(clip = 'off') +
     hexpand(.5, direction = 1)
-
+# save the tree to svg/png
 ggsave(p2, file="/home/david/ligase_bootsrap2.svg", width = 12, height = 12)
 ggsave(p2, file="/home/david/ligase_bootsrap2.png", width = 12, height = 12)
 
