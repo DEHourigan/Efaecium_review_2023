@@ -26,9 +26,6 @@ p2 <- ggtree(rooted_tree) +
     geom_nodelab(color = "grey40", size = 5, hjust=-0.3, size=5) +
     theme(legend.position="bottom",
         plot.margin = margin(1,12,1,1, "cm")) +
-    geom_hilight(node=c(1),
-        fill="steelblue",
-        extend = 40) +
     coord_cartesian(clip = 'off') +
     hexpand(.5, direction = 1)
 # save the tree to svg/png
